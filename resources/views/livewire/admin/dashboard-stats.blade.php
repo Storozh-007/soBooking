@@ -1,13 +1,13 @@
 <div class="mb-12 space-y-8">
     <div class="flex items-center justify-between flex-wrap gap-4">
-        <h2 class="text-3xl font-bold text-[#0D1F3F] dark:text-white">Dashboard Overview</h2>
+        <h2 class="text-3xl font-bold text-[#0D1F3F] dark:text-white">Статистика</h2>
         <div class="flex items-center gap-3">
             <button 
                 wire:click="exportRevenueCsv"
                 class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1a2c4e] border border-gray-200 dark:border-[#2a3c5e] rounded-xl shadow-sm text-sm font-semibold hover:-translate-y-0.5 transition-all"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10l5 5 5-5M12 15V3m-7 8v6a2 2 0 002 2h10a2 2 0 002-2v-6"></path></svg>
-                Export Revenue CSV
+                Експорт доходів у CSV
             </button>
         </div>
     </div>
@@ -19,7 +19,7 @@
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
             <div>
-                <p class="text-gray-500 text-sm font-medium">Total Revenue</p>
+                <p class="text-gray-500 text-sm font-medium">Загальний дохід</p>
                 <p class="text-2xl font-bold text-[#0D1F3F] dark:text-white">${{ number_format($totalRevenue / 100) }}</p>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
             </div>
             <div>
-                <p class="text-gray-500 text-sm font-medium">Total Bookings</p>
+                <p class="text-gray-500 text-sm font-medium">Всього бронювань</p>
                 <p class="text-2xl font-bold text-[#0D1F3F] dark:text-white">{{ $totalBookings }}</p>
             </div>
         </div>
@@ -39,7 +39,7 @@
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 001 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
             </div>
             <div>
-                <p class="text-gray-500 text-sm font-medium">Active Listings</p>
+                <p class="text-gray-500 text-sm font-medium">Активні номери</p>
                 <p class="text-2xl font-bold text-[#0D1F3F] dark:text-white">{{ $activeListings }}</p>
             </div>
         </div>
@@ -49,7 +49,7 @@
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
             </div>
             <div>
-                <p class="text-gray-500 text-sm font-medium">Unique Guests</p>
+                <p class="text-gray-500 text-sm font-medium">Унікальні гості</p>
                 <p class="text-2xl font-bold text-[#0D1F3F] dark:text-white">{{ $totalUsers }}</p>
             </div>
         </div>
@@ -59,18 +59,18 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white dark:bg-[#1a2c4e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-[#2a3c5e]">
             <div class="flex items-center justify-between mb-3">
-                <p class="text-sm font-semibold text-gray-500">Revenue This Month</p>
-                <span class="text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-600">MTD</span>
+                <p class="text-sm font-semibold text-gray-500">Дохід цього місяця</p>
+                <span class="text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-600">МТД</span>
             </div>
             <p class="text-3xl font-bold text-[#0D1F3F] dark:text-white">${{ number_format($revenueThisMonth / 100, 0) }}</p>
-            <p class="text-xs text-gray-500 mt-2">Average booking: ${{ number_format(($averageBookingValue ?? 0) / 100, 0) }}</p>
+            <p class="text-xs text-gray-500 mt-2">Середнє бронювання: ${{ number_format(($averageBookingValue ?? 0) / 100, 0) }}</p>
         </div>
         <div class="bg-white dark:bg-[#1a2c4e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-[#2a3c5e]">
-            <p class="text-sm font-semibold text-gray-500 mb-3">Occupancy</p>
+            <p class="text-sm font-semibold text-gray-500 mb-3">Зайнятість</p>
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-3xl font-bold text-[#0D1F3F] dark:text-white">{{ $inventory['occupancy_rate'] }}%</p>
-                    <p class="text-xs text-gray-500">Taken: {{ $inventory['taken'] }} / {{ $inventory['total'] }}</p>
+                    <p class="text-xs text-gray-500">Зайнято: {{ $inventory['taken'] }} / {{ $inventory['total'] }}</p>
                 </div>
                 <div class="h-16 w-16 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#0D1F3F] flex items-center justify-center text-white font-bold shadow-inner">
                     {{ $inventory['available_rate'] }}%
@@ -78,19 +78,19 @@
             </div>
         </div>
         <div class="bg-white dark:bg-[#1a2c4e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-[#2a3c5e]">
-            <p class="text-sm font-semibold text-gray-500 mb-3">Inventory</p>
+            <p class="text-sm font-semibold text-gray-500 mb-3">Номери</p>
             <div class="grid grid-cols-3 gap-2 text-center text-xs">
                 <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200">
                     <p class="font-bold text-lg">{{ $inventory['free'] }}</p>
-                    <p>Free</p>
+                    <p>Вільні</p>
                 </div>
                 <div class="p-3 rounded-xl bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-200">
                     <p class="font-bold text-lg">{{ $inventory['taken'] }}</p>
-                    <p>Occupied</p>
+                    <p>Зайняті</p>
                 </div>
                 <div class="p-3 rounded-xl bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-200">
                     <p class="font-bold text-lg">{{ $inventory['cleaning'] }}</p>
-                    <p>Cleaning</p>
+                    <p>Прибирання</p>
                 </div>
             </div>
         </div>
@@ -100,8 +100,8 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         <div class="bg-white dark:bg-[#1a2c4e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-[#2a3c5e]">
             <div class="flex items-center justify-between mb-6">
-                <h3 class="font-bold text-[#0D1F3F] dark:text-white">Revenue Trend</h3>
-                <span class="text-xs text-gray-500">Last 12 months</span>
+                <h3 class="font-bold text-[#0D1F3F] dark:text-white">Тенденція доходів</h3>
+                <span class="text-xs text-gray-500">Останні 12 місяців</span>
             </div>
             <div class="relative h-64">
                 <canvas id="revenueChart"></canvas>
@@ -109,8 +109,8 @@
         </div>
         <div class="bg-white dark:bg-[#1a2c4e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-[#2a3c5e]">
             <div class="flex items-center justify-between mb-6">
-                <h3 class="font-bold text-[#0D1F3F] dark:text-white">Weekly Bookings</h3>
-                <span class="text-xs text-gray-500">Last 7 days</span>
+                <h3 class="font-bold text-[#0D1F3F] dark:text-white">Тижневі бронювання</h3>
+                <span class="text-xs text-gray-500">Останні 7 днів</span>
             </div>
             <div class="relative h-64">
                 <canvas id="bookingsChart"></canvas>
@@ -200,17 +200,17 @@
         <!-- Recent Bookings -->
         <div class="lg:col-span-2 bg-white dark:bg-[#1a2c4e] rounded-2xl shadow-lg border border-gray-100 dark:border-[#2a3c5e] overflow-hidden">
             <div class="px-6 py-4 border-b border-gray-100 dark:border-white/5">
-                <h3 class="font-bold text-[#0D1F3F] dark:text-white">Recent Bookings</h3>
+                <h3 class="font-bold text-[#0D1F3F] dark:text-white">Останні бронювання</h3>
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-sm text-gray-600 dark:text-gray-300">
                     <thead class="bg-gray-50 dark:bg-[#0b1a36] text-xs uppercase font-semibold text-gray-500">
                         <tr>
-                            <th class="px-6 py-4">Guest</th>
-                            <th class="px-6 py-4">Apartment</th>
-                            <th class="px-6 py-4">Status</th>
-                            <th class="px-6 py-4 text-right">Total</th>
-                            <th class="px-6 py-4 text-right">Actions</th>
+                            <th class="px-6 py-4">Гість</th>
+                            <th class="px-6 py-4">Номер</th>
+                            <th class="px-6 py-4">Статус</th>
+                            <th class="px-6 py-4 text-right">Разом</th>
+                            <th class="px-6 py-4 text-right">Дії</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100 dark:divide-white/5">
@@ -255,7 +255,7 @@
         <!-- Top Performing Apartments -->
         <div class="lg:col-span-1 bg-white dark:bg-[#1a2c4e] rounded-2xl shadow-lg border border-gray-100 dark:border-[#2a3c5e] overflow-hidden">
             <div class="px-6 py-4 border-b border-gray-100 dark:border-white/5">
-                <h3 class="font-bold text-[#0D1F3F] dark:text-white">Top Performers</h3>
+                <h3 class="font-bold text-[#0D1F3F] dark:text-white">Найкращі номери</h3>
             </div>
             <div class="p-4 space-y-4">
                 @foreach($topApartments as $apartment)
@@ -267,7 +267,7 @@
                         >
                         <div class="flex-grow min-w-0">
                             <p class="text-sm font-bold text-[#0D1F3F] dark:text-white truncate">{{ $apartment->title }}</p>
-                            <p class="text-xs text-gray-500">{{ $apartment->bookings_count ?? 0 }} bookings</p>
+                            <p class="text-xs text-gray-500">{{ $apartment->bookings_count ?? 0 }} бронювань</p>
                         </div>
                         <div class="text-right">
                             <p class="text-sm font-bold text-[#D4AF37]">${{ number_format(($apartment->bookings_sum_total_price ?? 0) / 100, 0) }}</p>

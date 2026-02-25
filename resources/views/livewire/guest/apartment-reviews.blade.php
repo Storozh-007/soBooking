@@ -1,5 +1,5 @@
 <div class="mt-16">
-    <h3 class="text-2xl font-bold text-[#0D1F3F] dark:text-white mb-8">Guest Reviews</h3>
+    <h3 class="text-2xl font-bold text-[#0D1F3F] dark:text-white mb-8">Відгуки гостей</h3>
 
     <!-- List -->
     <div class="space-y-6 mb-12">
@@ -27,14 +27,14 @@
                 @endif
             </div>
         @empty
-            <p class="text-gray-500 italic">No reviews yet. Be the first to share your experience!</p>
+            <p class="text-gray-500 italic">Поки що немає відгуків. Поділіться своїм досвідом першим!</p>
         @endforelse
     </div>
 
     <!-- Form -->
     @auth
         <div class="bg-white dark:bg-[#1a2c4e] p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-[#2a3c5e]">
-            <h4 class="text-lg font-bold text-[#0D1F3F] dark:text-white mb-6">Leave a Review</h4>
+            <h4 class="text-lg font-bold text-[#0D1F3F] dark:text-white mb-6">Залишити відгук</h4>
             
             @if (session()->has('message'))
                 <div class="mb-4 text-emerald-500 text-sm font-bold">{{ session('message') }}</div>
@@ -42,7 +42,7 @@
 
             <form wire:submit="submit" class="space-y-6">
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Rating</label>
+                    <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Оцінка</label>
                     <div class="flex space-x-2">
                         @foreach([1, 2, 3, 4, 5] as $score)
                             <button type="button" wire:click="$set('rating', {{ $score }})" class="focus:outline-none transition-transform hover:scale-110">
@@ -54,13 +54,13 @@
                 </div>
 
                 <div>
-                    <label for="comment" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Comment</label>
+                    <label for="comment" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Коментар</label>
                     <textarea 
                         id="comment" 
                         wire:model="comment" 
                         rows="4" 
                         class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-[#2a3c5e] dark:bg-[#0b1a36] dark:text-white focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent outline-none transition-all resize-none"
-                        placeholder="Share your experience..."
+                        placeholder="Поділіться своїм досвідом..."
                     ></textarea>
                     @error('comment') <span class="text-rose-500 text-xs mt-1">{{ $message }}</span> @enderror
                 </div>
@@ -69,14 +69,14 @@
                     type="submit" 
                     class="px-8 py-3 bg-[#0D1F3F] hover:bg-[#1a3a6e] text-white font-bold rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0"
                 >
-                    Submit Review
+                    Надіслати відгук
                 </button>
             </form>
         </div>
     @else
         <div class="bg-gray-100 dark:bg-[#1a2c4e] p-6 rounded-xl text-center">
-            <p class="text-gray-600 dark:text-gray-400 mb-4">Please log in to leave a review.</p>
-            <a href="{{ route('login') }}" class="text-[#D4AF37] font-bold hover:underline">Log in</a>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Будь ласка, увійдіть, щоб залишити відгук.</p>
+            <a href="{{ route('login') }}" class="text-[#D4AF37] font-bold hover:underline">Увійти</a>
         </div>
     @endauth
 </div>

@@ -116,7 +116,7 @@ class CheckOut extends Component
     public function render()
     {
         $query = Booking::with(['user', 'apartment'])
-            ->where('status', 'active')
+            ->where('status', 'confirmed') // Show all confirmed bookings so user can test features
             ->orderBy('end_date', 'asc');
 
         if ($this->search) {

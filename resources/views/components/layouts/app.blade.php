@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
     </head>
     <body class="bg-gray-50 dark:bg-[#0b1a36] font-inter text-gray-800 dark:text-gray-200 antialiased">
         <div class="min-h-screen flex flex-col">
@@ -25,20 +26,20 @@
                         <div class="flex items-center space-x-4">
                             @auth
                                 @if(auth()->user()->isAdmin())
-                                    <a href="{{ route('admin.dashboard') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Dashboard</a>
-                                    <a href="{{ route('admin.apartments') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Rooms</a>
-                                    <a href="{{ route('admin.guests') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Guests</a>
-                                    <a href="{{ route('admin.checkin') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Check-in</a>
-                                    <a href="{{ route('admin.checkout') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Check-out</a>
+                                    <a href="{{ route('admin.dashboard') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Панель</a>
+                                    <a href="{{ route('admin.apartments') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Номери</a>
+                                    <a href="{{ route('admin.guests') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Гості</a>
+                                    <a href="{{ route('admin.checkin') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Заселення</a>
+                                    <a href="{{ route('admin.checkout') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Виїзд</a>
                                 @endif
-                                <span class="text-sm opacity-80 pl-4 border-l border-white/20">Welcome, {{ auth()->user()->name }}</span>
+                                <span class="text-sm opacity-80 pl-4 border-l border-white/20">Вітаємо, {{ auth()->user()->name }}</span>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <button type="submit" class="text-sm hover:text-[#D4AF37] transition-colors">Logout</button>
+                                    <button type="submit" class="text-sm hover:text-[#D4AF37] transition-colors">Вийти</button>
                                 </form>
                             @else
-                                <a href="{{ route('login') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Login</a>
-                                <a href="{{ route('register') }}" class="text-sm bg-[#D4AF37] text-[#0D1F3F] px-4 py-2 rounded-lg font-bold hover:bg-[#b39025] transition-colors">Register</a>
+                                <a href="{{ route('login') }}" class="text-sm hover:text-[#D4AF37] transition-colors">Увійти</a>
+                                <a href="{{ route('register') }}" class="text-sm bg-[#D4AF37] text-[#0D1F3F] px-4 py-2 rounded-lg font-bold hover:bg-[#b39025] transition-colors">Реєстрація</a>
                             @endauth
                         </div>
                     </div>
@@ -53,9 +54,10 @@
             <!-- Footer -->
             <footer class="bg-[#0D1F3F] text-white py-6 mt-auto">
                 <div class="max-w-7xl mx-auto px-4 text-center">
-                    <p class="text-sm opacity-60">&copy; {{ date('Y') }} soBooking. Premium Living.</p>
+                    <p class="text-sm opacity-60">&copy; {{ date('Y') }} soBooking. Преміальне проживання.</p>
                 </div>
             </footer>
         </div>
+        @livewireScripts
     </body>
 </html>

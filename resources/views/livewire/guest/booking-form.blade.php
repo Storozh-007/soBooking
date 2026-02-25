@@ -4,11 +4,11 @@
         <div class="flex items-end justify-between">
             <div class="text-[#0D1F3F] dark:text-white">
                 <span class="text-2xl font-bold">${{ number_format($apartment->price / 100, 0) }}</span>
-                <span class="text-gray-500 dark:text-gray-400 text-sm">/ night</span>
+                <span class="text-gray-500 dark:text-gray-400 text-sm">/ ніч</span>
             </div>
             <div class="flex items-center text-sm text-[#D4AF37] font-semibold">
                 <svg class="w-4 h-4 mr-1 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                4.92 · 18 reviews
+                4.92 · 18 відгуків
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
         <form wire:submit="book" class="space-y-4">
             <div class="grid grid-cols-2 gap-2 border border-gray-200 dark:border-[#2a3c5e] rounded-xl overflow-hidden">
                 <div class="p-3 border-r border-gray-200 dark:border-[#2a3c5e] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
-                    <label for="startDate" class="block text-[10px] font-bold text-[#0D1F3F] dark:text-white uppercase tracking-wider mb-1">Check-in</label>
+                    <label for="startDate" class="block text-[10px] font-bold text-[#0D1F3F] dark:text-white uppercase tracking-wider mb-1">Заїзд</label>
                     <input 
                         type="date" 
                         id="startDate" 
@@ -34,7 +34,7 @@
                     >
                 </div>
                 <div class="p-3 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
-                    <label for="endDate" class="block text-[10px] font-bold text-[#0D1F3F] dark:text-white uppercase tracking-wider mb-1">Check-out</label>
+                    <label for="endDate" class="block text-[10px] font-bold text-[#0D1F3F] dark:text-white uppercase tracking-wider mb-1">Виїзд</label>
                     <input 
                         type="date" 
                     <input 
@@ -47,7 +47,7 @@
             </div>
 
             <div class="border border-gray-200 dark:border-[#2a3c5e] rounded-xl overflow-hidden p-3 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
-                <label for="phone" class="block text-[10px] font-bold text-[#0D1F3F] dark:text-white uppercase tracking-wider mb-1">Phone Number</label>
+                <label for="phone" class="block text-[10px] font-bold text-[#0D1F3F] dark:text-white uppercase tracking-wider mb-1">Номер телефону</label>
                 <input 
                     type="tel" 
                     id="phone" 
@@ -69,24 +69,24 @@
                 type="submit" 
                 class="w-full py-3.5 bg-gradient-to-r from-[#0D1F3F] to-[#1a3a6e] hover:from-[#1a3a6e] hover:to-[#0D1F3F] text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-sm"
             >
-                Reserve
+                Забронювати
             </button>
         </form>
 
         @if($this->startDate && $this->endDate)
             <div class="mt-6 space-y-3 pt-6 border-t border-gray-100 dark:border-white/5">
                 <div class="flex justify-between text-gray-600 dark:text-gray-400 text-sm">
-                    <span>${{ number_format($apartment->price / 100, 0) }} x {{ $this->totalPrice / $apartment->price }} nights</span>
+                    <span>${{ number_format($apartment->price / 100, 0) }} x {{ $this->totalPrice / $apartment->price }} ночей</span>
                     <span>${{ number_format($this->totalPrice / 100, 0) }}</span>
                 </div>
                 <div class="flex justify-between text-[#0D1F3F] dark:text-white font-bold text-lg pt-3 border-t border-gray-100 dark:border-white/5">
-                    <span>Total</span>
+                    <span>Разом</span>
                     <span>${{ number_format($this->totalPrice / 100, 0) }}</span>
                 </div>
             </div>
         @else
             <div class="mt-4 text-center">
-                <p class="text-xs text-gray-400">You won't be charged yet</p>
+                <p class="text-xs text-gray-400">Гроші поки не зніматимуться</p>
             </div>
         @endif
     </div>

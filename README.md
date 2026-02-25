@@ -5,14 +5,6 @@
   <p><strong>Преміальна система управління бронюванням апартаментів та бутик-готелів</strong></p>
 
   <p>
-    <a href="#можливості">Можливості</a> •
-    <a href="#технологічний-стек">Технологічний стек</a> •
-    <a href="#встановлення">Встановлення</a> •
-    <a href="#галерея">Галерея</a> •
-    <a href="#доступи">Доступи</a>
-  </p>
-
-  <p>
     <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
     <img src="https://img.shields.io/badge/Livewire-4e56a6?style=for-the-badge&logo=livewire&logoColor=white" alt="Livewire">
     <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
@@ -142,7 +134,4 @@
 
 ---
 
-<div align="center">
-  <p>Створено з ❤️ для найкращого сервісу</p>
-</div>
 

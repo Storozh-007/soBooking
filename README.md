@@ -5,12 +5,29 @@
   <p><strong>Преміальна система управління бронюванням апартаментів та бутик-готелів</strong></p>
 
   <p>
+    <a href="https://sofia-odeskaya-apartments-production.up.railway.app/" target="_blank">
+        <img src="https://img.shields.io/badge/🟢_Live_Demo-Production-success?style=for-the-badge" alt="Live Demo">
+    </a>
+  </p>
+
+  <p>
     <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
     <img src="https://img.shields.io/badge/Livewire-4e56a6?style=for-the-badge&logo=livewire&logoColor=white" alt="Livewire">
     <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
     <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
   </p>
 </div>
+
+---
+
+## 🟢 Працюючий Проект (Live Demo)
+
+Ви можете переглянути повністю працюючу версію проекту онлайн:
+👉 **[Перейти на сайт Sofia-Odeskaya (Railway Production)](https://sofia-odeskaya-apartments-production.up.railway.app/)**
+
+**Тестові дані для входу на живий сайт:**
+- **Адмін:** `admin@sofa.com` / `password`
+- **Гість:** `guest@sofa.com` / `password`
 
 ---
 

@@ -79,3 +79,9 @@ Route::get('/debug-logs', function () {
     $lastLines = array_slice($lines, -50);
     return '<pre>' . implode("", $lastLines) . '</pre>';
 });
+
+Route::get('/secret-admin-seed', function () {
+    \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'GuestDataSeeder', '--force' => true]);
+    return 'Готово! База данных успешно заполнена тестовыми гостями. Вы можете закрыть эту страницу и обновить админку.';
+});
+
